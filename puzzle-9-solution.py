@@ -8,7 +8,6 @@ import gzip
 from PIL import Image
 import numpy as np
 from pyzbar.pyzbar import decode
-import os
 
 # NOTE: MacOSX zbar apparently won't decode the QR correctly,
 # this works on Linux CentOS 8.
@@ -17,7 +16,6 @@ import os
 # string --encoding=S puzzle-9.png
 # Side note, MacOSX 'string' does not support --encoding=S
 
-fsize = os.stat("puzzle-9.png").st_size
 with open("puzzle-9.png") as f:
     # skip the real png data
     f.seek(328510)
